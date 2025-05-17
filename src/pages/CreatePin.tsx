@@ -72,7 +72,7 @@ function CreatePin() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/pins/', formData, {
+      const response = await axios.post('http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

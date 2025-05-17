@@ -37,7 +37,7 @@ function TagPins() {
     const fetchPins = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8000/api/pins/tag/${tagName}`, {
+        const response = await axios.get(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/tag/${tagName}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPins(response.data);

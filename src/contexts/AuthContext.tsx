@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api';
 
 // Configure axios defaults
 axios.defaults.withCredentials = true;

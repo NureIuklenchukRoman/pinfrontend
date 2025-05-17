@@ -66,7 +66,7 @@ function PinDetail() {
 
   const fetchPin = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/pins/${id}`, {
+      const response = await axios.get(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPin(response.data);
@@ -83,7 +83,7 @@ function PinDetail() {
   const fetchComments = async () => {
     setLoadingComments(true);
     try {
-      const response = await axios.get(`http://localhost:8000/api/pins/${id}/comments`, {
+      const response = await axios.get(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${id}/comments`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setComments(response.data);
@@ -116,7 +116,7 @@ function PinDetail() {
 
     try {
       if (pin?.is_saved) {
-        await axios.delete(`http://localhost:8000/api/pins/${id}/save`, {
+        await axios.delete(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${id}/save`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSnackbar({
@@ -125,7 +125,7 @@ function PinDetail() {
           severity: 'success'
         });
       } else {
-        await axios.post(`http://localhost:8000/api/pins/${id}/save`, {}, {
+        await axios.post(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${id}/save`, {}, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSnackbar({
@@ -175,7 +175,7 @@ function PinDetail() {
     }
     try {
       await axios.post(
-        `http://localhost:8000/api/pins/${id}/comments`,
+        `http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${id}/comments`,
         { content: comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -252,7 +252,7 @@ function PinDetail() {
               minHeight: isMobile ? '300px' : '600px',
             }}>
               <img
-                src={`http://localhost:8000${pin.image_url}`}
+                src={`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000${pin.image_url}`}
                 alt={pin.title}
                 style={{
                   width: '100%',

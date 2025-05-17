@@ -37,7 +37,7 @@ function SavedPins() {
 
   const fetchSavedPins = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/pins/saved', {
+      const response = await axios.get('http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/saved', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPins(response.data);
