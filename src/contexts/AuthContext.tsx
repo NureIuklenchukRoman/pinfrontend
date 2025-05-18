@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import { useLocation } from 'react-router-dom'; // only inside components
+
 const API_URL = 'https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api';
 
 // Configure axios defaults
@@ -11,8 +13,8 @@ axios.defaults.headers.common['Content-Type'] = 'application/json';
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      // Clear token and user data
+    const currentPath = window.location.pathname;
+    if (error.response?.status === 401 && currentPath !== '/login') {
       localStorage.removeItem('token');
       window.location.href = '/login';
     }
