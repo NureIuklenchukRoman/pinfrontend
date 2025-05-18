@@ -47,11 +47,11 @@ function PinCard({ pin }: PinCardProps) {
 
     try {
       if (pin.is_saved) {
-        await axios.delete(`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${pin.id}/save`, {
+        await axios.delete(`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/pins/${pin.id}/save`, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post(`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${pin.id}/save`, {}, {
+        await axios.post(`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/pins/${pin.id}/save`, {}, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
@@ -80,7 +80,7 @@ function PinCard({ pin }: PinCardProps) {
         <CardMedia
           component="img"
           height="200"
-          image={`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000${pin.image_url}`}
+          image={`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net${pin.image_url}`}
           alt={pin.title}
           sx={{ objectFit: 'cover' }}
         />
