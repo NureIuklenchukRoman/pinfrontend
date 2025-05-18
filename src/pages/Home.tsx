@@ -37,7 +37,7 @@ function Home() {
 
   const fetchPins = async () => {
     try {
-      const response = await axios.get('http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/', {
+      const response = await axios.get('https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/pins/', {
         headers: token ? { Authorization: `Bearer ${token}` } : {}
       });
       setPins(response.data);

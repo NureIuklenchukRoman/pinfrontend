@@ -72,7 +72,7 @@ function Profile() {
 
   const fetchUserPins = async () => {
     try {
-      const response = await axios.get('http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/users/me/pins', {
+      const response = await axios.get('https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/users/me/pins', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPins(response.data);
@@ -88,7 +88,7 @@ function Profile() {
 
   const fetchSavedPins = async () => {
     try {
-      const response = await axios.get('http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/saved', {
+      const response = await axios.get('https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/pins/saved', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSavedPins(response.data);
@@ -129,7 +129,7 @@ function Profile() {
     
     try {
       if (savedPins.some(pin => pin.id === pinId)) {
-        await axios.delete(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${pinId}/save`, {
+        await axios.delete(`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/pins/${pinId}/save`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSnackbar({
@@ -138,7 +138,7 @@ function Profile() {
           severity: 'success'
         });
       } else {
-        await axios.post(`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000/api/pins/${pinId}/save`, {}, {
+        await axios.post(`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net/api/pins/${pinId}/save`, {}, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSnackbar({
@@ -241,7 +241,7 @@ function Profile() {
                   aspectRatio: '1',
                   objectFit: 'cover',
                 }}
-                image={`http://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net:8000${pin.image_url}`}
+                image={`https://mypythonwebapp-edcjb3e3a0f5apg6.polandcentral-01.azurewebsites.net${pin.image_url}`}
                 alt={pin.title}
               />
               <Box
